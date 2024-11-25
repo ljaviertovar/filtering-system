@@ -7,8 +7,7 @@ export default function Logo() {
 	return (
 		<Link href='/' className='flex gap-1'>
 			<Image priority src={applogo} alt='MyEcomm' className='w-5 h-5' />
-			{/* {!isCollapsed && <span>My SaaS</span>} */}
-			<span className='font-semibold leading-tight tracking-tighter'>MyEcomm</span>
+			<span className='font-bold leading-tight tracking-tighter  text-lg'>MyEcomm</span>
 		</Link>
 	)
 }
