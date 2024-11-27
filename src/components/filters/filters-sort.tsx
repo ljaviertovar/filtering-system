@@ -38,7 +38,7 @@ export default function FiltersSort() {
 						size={'sm'}
 						role='combobox'
 						aria-expanded={open}
-						className='max-w-[120px] justify-between'
+						className='max-w-[120px] justify-between p-2'
 					>
 						{value ? options.find(option => option.value === value)?.label : 'Select ...'}
 						<ChevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import Header from '@/components/header'
+import BannerPlp from '@/components/banner-plp'
 
 import './globals.css'
 
@@ -24,9 +25,11 @@ export default function RootLayout({
 				<link rel='manifest' href='/favicon/site.webmanifest' />
 			</head>
 			<body>
+				<BannerPlp />
+
 				<Header />
 
-				<main className='w-full mx-auto px-2 md:px-4'>{children}</main>
+				<main className='w-full mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>{children}</main>
 			</body>
 		</html>
 	)

@@ -9,16 +9,17 @@ export default function FiltersSheet() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant='ghost' size={'sm'}>
+				<Button variant='ghost' size={'sm'} className='md:hidden p-2'>
 					<ListFilter size={16} />
 					Filters
 				</Button>
 			</SheetTrigger>
 			<SheetContent side={'left'} className='w-[280px]'>
-				<SheetHeader>
-					<SheetTitle className='w-full mx-auto flex items-center justify-center h-14'>
+				<SheetHeader className='pb-4'>
+					<div className='w-full mx-auto flex items-center justify-center h-14'>
 						<Logo />
-					</SheetTitle>
+					</div>
+					<SheetTitle className='text-sm text-muted-foreground font-normal text-left'>Fliter by:</SheetTitle>
 				</SheetHeader>
 				<Separator />
 				<FiltersItems />
