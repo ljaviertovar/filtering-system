@@ -1,5 +1,4 @@
 import { FiltersItems } from '.'
-import { Separator } from '../ui/separator'
 
 export default function FiltersAside() {
 	return (
