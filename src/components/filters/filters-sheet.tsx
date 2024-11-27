@@ -9,7 +9,7 @@ export default function FiltersSheet() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant='ghost' size={'sm'} className='md:hidden'>
+				<Button variant='ghost' size={'sm'} className='md:hidden p-2'>
 					<ListFilter size={16} />
 					Filters
 				</Button>
