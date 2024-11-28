@@ -11,6 +11,7 @@ export default function Home() {
 
 				<section className='w-full p-2 md:p4'>
 					<Empty />
+					<Empty />
 				</section>
 			</div>
 		</div>
