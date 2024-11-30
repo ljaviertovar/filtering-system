@@ -17,8 +17,6 @@ export default function SearchLayout({
 		<>
 			<BannerPlp />
 
-			<Header />
-
 			<main className='w-full mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>{children}</main>
 		</>
 	)
