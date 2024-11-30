@@ -4,6 +4,7 @@ import Header from '@/components/header'
 import BannerPlp from '@/components/banner-plp'
 
 import './globals.css'
+import QueryClientProviders from '@/components/providers/query-client-providers'
 
 export const metadata: Metadata = {
 	title: 'Filtering Next App',
@@ -29,7 +30,9 @@ export default function RootLayout({
 
 				<Header />
 
-				<main className='w-full mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>{children}</main>
+				<main className='w-full mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>
+					<QueryClientProviders>{children}</QueryClientProviders>
+				</main>
 			</body>
 		</html>
 	)
