@@ -1,12 +1,12 @@
-import BreadcrumbSearch from '@/components/breadcrumb-search'
+import BreadcrumbPLP from '@/components/search/breadcrumb-plp'
 import { FiltersHeader, FiltersAside } from '@/components/filters'
-import Empty from '@/components/products/empty'
+import Empty from '@/components/search/empty'
 
 export default function CategoriesPage() {
 	return (
 		<div className='max-w-7xl mx-auto flex flex-col'>
 			<div className='w-full py-2'>
-				<BreadcrumbSearch />
+				<BreadcrumbPLP />
 			</div>
 			<div className='flex gap-2'>
 				<aside className='w-[280px] hidden md:flex flex-col'>
