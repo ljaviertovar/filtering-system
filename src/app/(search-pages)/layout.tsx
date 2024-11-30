@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 
-import Header from '@/components/header'
 import BannerPlp from '@/components/banner-plp'
 
 export const metadata: Metadata = {
