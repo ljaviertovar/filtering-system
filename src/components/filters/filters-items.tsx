@@ -2,7 +2,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 export default function FiltersItems({
 	updateFilter,
-	filters,
 }: {
 	updateFilter: (key: string, value: string) => void
 	filters: Record<string, string>
