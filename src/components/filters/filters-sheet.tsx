@@ -6,7 +6,7 @@ import Logo from '../logo'
 import { ListFilter } from 'lucide-react'
 
 export default function FiltersSheet() {
-	const updateFilter = (key: string, value: string) => {
+	const updateFilter = () => {
 		return null
 	}
 
