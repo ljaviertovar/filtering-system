@@ -6,6 +6,10 @@ import Logo from '../logo'
 import { ListFilter } from 'lucide-react'
 
 export default function FiltersSheet() {
+	const updateFilter = (key: string, value: string) => {
+		return null
+	}
+
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
@@ -22,7 +26,7 @@ export default function FiltersSheet() {
 					<SheetTitle className='text-sm text-muted-foreground font-normal text-left'>Fliter by:</SheetTitle>
 				</SheetHeader>
 				<Separator />
-				<FiltersItems />
+				<FiltersItems updateFilter={updateFilter} />
 			</SheetContent>
 		</Sheet>
 	)
