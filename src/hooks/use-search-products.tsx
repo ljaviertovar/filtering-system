@@ -7,7 +7,7 @@ import { fetchProductsFromDummy } from '@/lib/api-products'
 export const useSearchProducts = () => {
 	const searchParams = useSearchParams()
 
-	const filters = {
+	const filters: any = {
 		color: searchParams.get('color') || '',
 		size: searchParams.get('size') || '',
 		price: searchParams.get('price') || '',
