@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { fetchProductsFromDummy } from '@/lib/products-api'
+import { fetchProductsFromDummy } from '@/lib/api-products'
 
 export async function GET(request: Request) {
 	const { searchParams } = new URL(request.url)

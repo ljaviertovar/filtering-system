@@ -5,26 +5,25 @@ import {
 	BreadcrumbItem,
 	BreadcrumbLink,
 	BreadcrumbList,
-	// BreadcrumbPage,
+	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 
-export default function BreadcrumbWithCustomSeparator() {
+export default function BreadcrumbPLP() {
 	return (
 		<Breadcrumb>
 			<BreadcrumbList>
 				<BreadcrumbItem>
-					<BreadcrumbLink href='/'>Home</BreadcrumbLink>
+					<BreadcrumbLink href='/categories' className='text-xs'>
+						Shop All
+					</BreadcrumbLink>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator>
 					<Slash />
 				</BreadcrumbSeparator>
 				<BreadcrumbItem>
-					<BreadcrumbLink href='/PLP'></BreadcrumbLink>
+					<BreadcrumbPage className='text-xs'>Categories</BreadcrumbPage>
 				</BreadcrumbItem>
-				<BreadcrumbSeparator>
-					<Slash />
-				</BreadcrumbSeparator>
 			</BreadcrumbList>
 		</Breadcrumb>
 	)
