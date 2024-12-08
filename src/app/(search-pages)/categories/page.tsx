@@ -5,30 +5,36 @@ import { BreadcrumbPlp, SearchResult } from '@/components/search'
 import { useSearchProducts } from '@/hooks/use-search-products'
 import { Suspense } from 'react'
 
-export default function CategoriesPage() {
+function SearchComponent() {
 	const { data, isLoading } = useSearchProducts()
 
 	console.log({ data })
 
 	return (
-		<Suspense>
-			<div className='max-w-7xl mx-auto flex flex-col'>
-				<div className='w-full py-2'>
-					<BreadcrumbPlp />
-				</div>
-				<div className='flex gap-2'>
-					<aside className='w-[280px] hidden md:flex flex-col'>
-						<FiltersAside />
-					</aside>
-					<div className='w-full'>
-						<FiltersHeader />
+		<div className='max-w-7xl mx-auto flex flex-col'>
+			<div className='w-full py-2'>
+				<BreadcrumbPlp />
+			</div>
+			<div className='flex gap-2'>
+				<aside className='w-[280px] hidden md:flex flex-col'>
+					<FiltersAside />
+				</aside>
+				<div className='w-full'>
+					<FiltersHeader />
 
-						<section className='w-full p-2 md:p4'>
-							<SearchResult data={data} isLoading={isLoading} />
-						</section>
-					</div>
+					<section className='w-full p-2 md:p4'>
+						<SearchResult data={data} isLoading={isLoading} />
+					</section>
 				</div>
 			</div>
+		</div>
+	)
+}
+
+export default function CategoriesPage() {
+	return (
+		<Suspense>
+			<SearchComponent />
 		</Suspense>
 	)
 }
