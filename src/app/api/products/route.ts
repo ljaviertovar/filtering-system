@@ -1,22 +1,28 @@
-import { NextResponse } from 'next/server'
-import { fetchProductsFromDummy } from '@/lib/api-products'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function GET(request: Request) {
-	const { searchParams } = new URL(request.url)
+import { fetchData } from '@/lib/fetch-data'
 
-	const category = searchParams.get('category')
-	const priceMin = searchParams.get('priceMin')
-	const priceMax = searchParams.get('priceMax')
+const WIX_URL = 'https://www.wixapis.com/stores/v1/'
 
+export async function POST(request: NextRequest) {
+	console.log({ request })
 	try {
-		// Fetch products from dummy API or database
-		const products = await fetchProductsFromDummy({
-			category: category || undefined,
-			priceMin: priceMin ? Number(priceMin) : undefined,
-			priceMax: priceMax ? Number(priceMax) : undefined,
+		const data = await fetchData(`${WIX_URL}products/query`, {
+			method: 'POST',
+			headers: {
+				Authorization: process.env.NEXT_WIX_API_KEY,
+				'wix-site-id': process.env.NEXT_WIX_SITE_ID,
+			},
+			body: JSON.stringify({
+				query: {
+					filter: '{"productOptions.size": "L"}}',
+				},
+			}),
 		})
 
-		return NextResponse.json({ products })
+		console.log({ data })
+
+		return NextResponse.json(data)
 	} catch (error) {
 		console.error(error)
 		return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 })
