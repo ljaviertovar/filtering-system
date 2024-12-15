@@ -1,5 +1,5 @@
 import BreadcrumbSearch from '@/components/breadcrumb-search'
-import { FiltersHeader, FiltersAside } from '@/components/filters'
+import { HeaderFilters, AsideFilters } from '@/components/filters'
 import Empty from '@/components/products/empty'
 
 export default function CategoriesPage() {
@@ -10,10 +10,10 @@ export default function CategoriesPage() {
 			</div>
 			<div className='flex gap-2'>
 				<aside className='w-[280px] hidden md:flex flex-col'>
-					<FiltersAside />
+					<AsideFilters />
 				</aside>
 				<div className='w-full'>
-					<FiltersHeader />
+					<HeaderFilters />
 
 					<section className='w-full p-2 md:p4'>
 						<Empty />

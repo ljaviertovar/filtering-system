@@ -1,17 +1,17 @@
-import FilterSort from './filters-sort'
-import FilterSheet from './filters-sheet'
+import SortFilters from './sort-filters'
+import SheetFilters from './sheet-filters'
 import { LayoutGrid, LayoutList } from 'lucide-react'
 import { Button } from '../ui/button'
 
-export default function FiltersHeader() {
+export default function HeaderFilters() {
 	return (
 		<div className='w-full mx-auto flex justify-between md:justify-end items-center py-2 '>
-			<FilterSheet />
+			<SheetFilters />
 			<div className='flex-1'>
 				<p className='text-muted-foreground text-sm hidden md:block'>Showing 1-12 of 0 results</p>
 			</div>
 			<div className='flex items-center gap-2'>
-				<FilterSort />
+				<SortFilters />
 				<Button variant='ghost' size={'sm'} className='p-2'>
 					<LayoutList size={20} className='text-muted-foreground' />
 				</Button>

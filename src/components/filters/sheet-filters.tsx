@@ -1,11 +1,11 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
 import { Button } from '../ui/button'
 import { Separator } from '../ui/separator'
-import { FiltersItems } from '.'
+import { Filters } from '.'
 import Logo from '../logo'
 import { ListFilter } from 'lucide-react'
 
-export default function FiltersSheet() {
+export default function SheetFilters() {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
@@ -22,7 +22,7 @@ export default function FiltersSheet() {
 					<SheetTitle className='text-sm text-muted-foreground font-normal text-left'>Fliter by:</SheetTitle>
 				</SheetHeader>
 				<Separator />
-				<FiltersItems />
+				<Filters />
 			</SheetContent>
 		</Sheet>
 	)

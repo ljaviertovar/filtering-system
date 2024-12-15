@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
-export default function FiltersItems() {
+export default function Filters() {
 	return (
 		<Accordion type='multiple' className='w-full' defaultValue={['color', 'size', 'price']}>
 			<AccordionItem value='color'>
