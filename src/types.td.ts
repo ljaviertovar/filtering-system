@@ -1,4 +1,4 @@
-export interface Filters {
+export interface ProductFilters {
 	category?: string
 	color?: string
 	size?: string

@@ -1,9 +1,11 @@
 'use client'
 
+import { Suspense } from 'react'
+
 import { FiltersHeader, FiltersAside } from '@/components/filters'
 import { BreadcrumbPlp, SearchResult } from '@/components/search'
+
 import { useSearchProducts } from '@/hooks/use-search-products'
-import { Suspense } from 'react'
 
 function SearchComponent() {
 	const { data, isLoading } = useSearchProducts()

@@ -1,12 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server'
-
 import { fetchData } from '@/lib/fetch-data'
 
 const WIX_URL = 'https://www.wixapis.com/stores/v1/'
 
-export async function POST(request: NextRequest) {
-	console.log({ request })
+export async function POST(request: Request) {
 	try {
+		const req = await request.json()
+
+		const filter = {
+			'productOptions.size': req.filters.size,
+		}
+
 		const data = await fetchData(`${WIX_URL}products/query`, {
 			method: 'POST',
 			headers: {
@@ -15,16 +18,14 @@ export async function POST(request: NextRequest) {
 			},
 			body: JSON.stringify({
 				query: {
-					filter: '{"productOptions.size": "L"}}',
+					filter: JSON.stringify(filter),
 				},
 			}),
 		})
 
-		console.log({ data })
-
-		return NextResponse.json(data)
+		return Response.json(data)
 	} catch (error) {
-		console.error(error)
-		return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 })
+		console.error('Error fetching products:', error)
+		return Response.json({ error: 'Failed to fetch products' }, { status: 500 })
 	}
 }
