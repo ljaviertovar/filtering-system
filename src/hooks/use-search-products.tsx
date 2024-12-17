@@ -5,23 +5,22 @@ import { useQuery } from '@tanstack/react-query'
 
 import { fetchProductsFromDummy } from '@/lib/api-products'
 
-import { ProductFilters } from '../types.td'
+import { QueryFilter } from '../types.td'
 
 export const useSearchProducts = () => {
 	const searchParams = useSearchParams()
 
-	const productFilters: ProductFilters = {
+	const queryFilter: QueryFilter = {
 		color: searchParams.get('color') ?? undefined,
 		size: searchParams.get('size') ?? 'L',
-		sort: searchParams.get('sort') ?? 'relevance',
+		sort: searchParams.get('sort') ?? '',
 	}
 
-	console.log({ productFilters })
+	console.log({ queryFilter })
 
 	return useQuery({
-		queryKey: ['products', productFilters],
-		queryFn: async () => fetchProductsFromDummy(productFilters),
+		queryKey: ['products', queryFilter],
+		queryFn: async () => fetchProductsFromDummy(queryFilter),
 		staleTime: 5 * 60 * 1000,
-		enabled: !!productFilters.size,
 	})
 }

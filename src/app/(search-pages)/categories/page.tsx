@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react'
 
-import { FiltersHeader, FiltersAside } from '@/components/filters'
+import { HeaderFilters, AsideFilters } from '@/components/filters'
 import { BreadcrumbPlp, SearchResult } from '@/components/search'
 
 import { useSearchProducts } from '@/hooks/use-search-products'
@@ -19,10 +19,10 @@ function SearchComponent() {
 			</div>
 			<div className='flex gap-2'>
 				<aside className='w-[280px] hidden md:flex flex-col'>
-					<FiltersAside />
+					<AsideFilters />
 				</aside>
 				<div className='w-full'>
-					<FiltersHeader />
+					<HeaderFilters />
 
 					<section className='w-full p-2 md:p4'>
 						<SearchResult data={data} isLoading={isLoading} />

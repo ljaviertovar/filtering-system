@@ -24,7 +24,7 @@ const options = [
 	},
 ]
 
-export default function FiltersSort() {
+export default function SortFilters() {
 	const [open, setOpen] = useState(false)
 	const [value, setValue] = useState('')
 
