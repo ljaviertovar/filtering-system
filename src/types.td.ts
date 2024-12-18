@@ -13,3 +13,10 @@ export interface Filter {
 	code?: string
 	items?: Filter[]
 }
+
+export enum Colors {
+	blue = '#48A2EB',
+	yellow = '#ffdf00',
+	black = '#000000',
+	white = '#ffffff',
+}

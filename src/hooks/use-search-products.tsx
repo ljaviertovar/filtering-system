@@ -10,13 +10,11 @@ import { QueryFilter } from '../types.td'
 export const useSearchProducts = () => {
 	const searchParams = useSearchParams()
 
-	const queryFilter: QueryFilter = {
-		color: searchParams.get('color') ?? undefined,
-		size: searchParams.get('size') ?? 'L',
-		sort: searchParams.get('sort') ?? '',
-	}
+	let queryFilter: QueryFilter = {}
 
-	console.log({ queryFilter })
+	for (const [key, value] of searchParams.entries()) {
+		queryFilter = { ...queryFilter, [key]: value }
+	}
 
 	return useQuery({
 		queryKey: ['products', queryFilter],

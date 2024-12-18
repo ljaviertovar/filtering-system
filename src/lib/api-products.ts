@@ -1,14 +1,14 @@
 import { fetchData } from './fetch-data'
 
-import { ProductFilters } from '@/types.td'
+import { QueryFilter } from '@/types.td'
 
-export const fetchProductsFromDummy = async (prductFilters: ProductFilters) => {
+export const fetchProductsFromDummy = async (queryFilter: QueryFilter) => {
 	try {
-		const filters = JSON.stringify(prductFilters)
+		const queryFilterParsed = JSON.stringify(queryFilter)
 
 		const data = await fetchData('/api/products', {
 			method: 'POST',
-			body: JSON.stringify({ filters }),
+			body: JSON.stringify({ queryFilter: queryFilterParsed }),
 		})
 
 		return data

@@ -1,26 +1,26 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Checkbox } from '../ui/checkbox'
 
+import useFilters from '@/hooks/use-filters'
+
 import { filters } from '@/data'
 import { Filter } from '@/types.td'
 
-interface Props {
-	updateFilters: (key: string, value: string) => void
-}
-
-export default function Filters({ updateFilters }: Props) {
+export default function Filters() {
 	const defaultValues = filters.map(filter => filter.id)
 
 	return (
 		<Accordion type='multiple' className='w-full' defaultValue={defaultValues}>
 			{filters.map(filter => (
-				<FilterItem key={filter.id} {...filter} updateFilters={updateFilters} />
+				<FilterItem key={filter.id} {...filter} />
 			))}
 		</Accordion>
 	)
 }
 
-function FilterItem({ id, label, items, updateFilters }: Filter & Props) {
+function FilterItem({ id, label, items }: Filter) {
+	const { filtersFromUrl, updateFilters } = useFilters()
+
 	return (
 		<AccordionItem value={id}>
 			<AccordionTrigger className='font-semibold text-md text-primary hover:text-primary/80 hover:no-underline'>
@@ -29,7 +29,11 @@ function FilterItem({ id, label, items, updateFilters }: Filter & Props) {
 			<AccordionContent>
 				{items?.map(item => (
 					<div className='flex items-center space-x-2 mb-2'>
-						<Checkbox id={item.id} onCheckedChange={() => updateFilters(label, item.label)} />
+						<Checkbox
+							id={item.id}
+							onCheckedChange={() => updateFilters(label, item.label)}
+							checked={filtersFromUrl[id]?.includes(item.id)}
+						/>
 						<label
 							htmlFor={item.id}
 							className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
