@@ -9,8 +9,10 @@ interface Props {
 }
 
 export default function Filters({ updateFilters }: Props) {
+	const defaultValues = filters.map(filter => filter.id)
+
 	return (
-		<Accordion type='multiple' className='w-full' defaultValue={['color', 'size', 'price']}>
+		<Accordion type='multiple' className='w-full' defaultValue={defaultValues}>
 			{filters.map(filter => (
 				<FilterItem key={filter.id} {...filter} updateFilters={updateFilters} />
 			))}

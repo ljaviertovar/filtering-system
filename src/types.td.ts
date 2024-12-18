@@ -10,5 +10,6 @@ export interface QueryFilter {
 export interface Filter {
 	id: string
 	label: string
+	code?: string
 	items?: Filter[]
 }

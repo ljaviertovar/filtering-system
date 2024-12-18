@@ -23,6 +23,7 @@ export default function useFilters() {
 			console.log('CASE1')
 			const newValues = values.filter(v => v !== valueLower)
 			console.log({ newValues })
+			console.log(newValues.join(','))
 			if (newValues.length) {
 				params.set(keyLower, newValues.join(','))
 			} else {
@@ -33,7 +34,7 @@ export default function useFilters() {
 			params.set(keyLower, [...values, valueLower].join(','))
 		}
 
-		router.push(`?${params.toString()}`)
+		router.push(`?${decodeURIComponent(params.toString())}`)
 	}
 
 	return { updateFilters }
