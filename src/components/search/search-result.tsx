@@ -10,7 +10,7 @@ export default function SearchResult({ data, isLoading }: Props) {
 	if (!data?.products?.length) return <div>No products found</div>
 
 	return (
-		<div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+		<div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
 			{data.products.map((product: any) => (
 				<ProductCard key={product.id} product={product} />
 			))}

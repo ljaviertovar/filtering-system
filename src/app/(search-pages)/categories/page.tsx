@@ -22,7 +22,7 @@ function SearchComponent() {
 					<AsideFilters />
 				</aside>
 				<div className='w-full'>
-					<HeaderFilters />
+					<HeaderFilters totalResults={data?.totalResults ?? 0} />
 
 					<section className='w-full p-2 md:p4'>
 						<SearchResult data={data} isLoading={isLoading} />

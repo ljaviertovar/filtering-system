@@ -23,7 +23,7 @@ function FilterItem({ id, label, items }: Filter) {
 
 	return (
 		<AccordionItem value={id}>
-			<AccordionTrigger className='font-semibold text-md text-primary hover:text-primary/80 hover:no-underline'>
+			<AccordionTrigger className=' text-md text-muted-foreground hover:text-primary/80 hover:no-underline'>
 				{label}
 			</AccordionTrigger>
 			<AccordionContent>
