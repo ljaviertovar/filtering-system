@@ -13,10 +13,15 @@ export default function useFilters() {
 		const keyLower = key.toLowerCase()
 		const valueLower = value.toLowerCase()
 
+		console.log({ keyLower, valueLower })
+
 		const params = new URLSearchParams(searchParams.toString())
 
 		const param = params.get(keyLower)
 		const values = param?.split(',') ?? []
+		console.log({ values })
+
+		console.log(params)
 
 		if (values.includes(valueLower)) {
 			const newValues = values.filter(v => v !== valueLower)
@@ -26,7 +31,11 @@ export default function useFilters() {
 				params.delete(keyLower)
 			}
 		} else {
-			params.set(keyLower, [...values, valueLower].join(','))
+			if (keyLower === 'price') {
+				params.set(keyLower, valueLower)
+			} else {
+				params.set(keyLower, [...values, valueLower].join(','))
+			}
 		}
 
 		router.push(`?${decodeURIComponent(params.toString())}`)

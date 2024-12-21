@@ -10,8 +10,6 @@ import { useSearchProducts } from '@/hooks/use-search-products'
 function SearchComponent() {
 	const { data, isLoading } = useSearchProducts()
 
-	console.log({ data })
-
 	return (
 		<div className='max-w-7xl mx-auto flex flex-col'>
 			<div className='w-full py-2'>

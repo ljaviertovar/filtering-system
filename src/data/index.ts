@@ -28,15 +28,4 @@ export const filters: Filter[] = [
 			{ id: 'jacket', label: 'Jacket' },
 		],
 	},
-	{
-		id: 'price',
-		label: 'Price',
-		items: [
-			{ id: '0-50', label: '$0 - $50' },
-			{ id: '50-100', label: '$50 - $100' },
-			{ id: '100-150', label: '$100 - $150' },
-			{ id: '150-200', label: '$150 - $200' },
-			{ id: '200+', label: '$200+' },
-		],
-	},
 ]

@@ -14,8 +14,7 @@ export async function fetchData(url: string, options: Record<string, any> = {}) 
 		const response = await fetch(url, config)
 
 		if (!response.ok) {
-			console.log(`Error: ${response.status} ${response.statusText}`)
-			throw new Error(`Error: ${response.status} ${response.statusText}`)
+			throw new Error(`${response.statusText}`)
 		}
 
 		return await response.json()
