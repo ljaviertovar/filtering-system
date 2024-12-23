@@ -29,7 +29,7 @@ export default function Filters() {
 				<AccordionContent>
 					<div className='mt-8'>
 						<DualRangeSlider
-							label={value => <span>{value}</span>}
+							label={value => <span>${value}</span>}
 							value={
 								filtersFromUrl.price
 									? [parseInt(filtersFromUrl.price[0]), parseInt(filtersFromUrl.price[1])]
@@ -66,7 +66,7 @@ function FilterItem({
 			</AccordionTrigger>
 			<AccordionContent key={id}>
 				{items?.map(item => (
-					<div className='flex items-center space-x-2 mb-2'>
+					<div key={item.id} className='flex items-center space-x-2 mb-2'>
 						<Checkbox
 							id={item.id}
 							onCheckedChange={() => updateFilters(label, item.label)}

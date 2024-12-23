@@ -13,15 +13,9 @@ export default function useFilters() {
 		const keyLower = key.toLowerCase()
 		const valueLower = value.toLowerCase()
 
-		console.log({ keyLower, valueLower })
-
 		const params = new URLSearchParams(searchParams.toString())
-
 		const param = params.get(keyLower)
 		const values = param?.split(',') ?? []
-		console.log({ values })
-
-		console.log(params)
 
 		if (values.includes(valueLower)) {
 			const newValues = values.filter(v => v !== valueLower)
@@ -56,9 +50,13 @@ export default function useFilters() {
 		setFiltersFromUrl(filtersFromUrl)
 	}
 
+	const clearFilters = () => {
+		router.push('/categories')
+	}
+
 	useEffect(() => {
 		getFiltersFromUrl()
 	}, [searchParams])
 
-	return { filtersFromUrl, updateFilters }
+	return { filtersFromUrl, updateFilters, clearFilters }
 }

@@ -13,6 +13,8 @@ export async function POST(request: Request) {
 			query = getQuery(queryFilterParsed)
 		}
 
+		console.log('======================================================================query:', query)
+
 		const data = await fetchData(`${WIX_URL}products/query`, {
 			method: 'POST',
 			headers: {
@@ -108,8 +110,14 @@ const getQuery = (queryFilterParsed: Record<string, any>) => {
 	}
 
 	const query = Object.hasOwn(queryFilterParsed, 'price')
-		? { filter: JSON.stringify({ $and: filter }), sort: JSON.stringify(sort) }
-		: { filter: JSON.stringify(filter), sort: JSON.stringify(sort) }
+		? {
+				filter: JSON.stringify({ $and: filter }),
+				...(Object.hasOwn(queryFilterParsed, 'sort') && { sort: JSON.stringify(sort) }),
+		  }
+		: {
+				filter: JSON.stringify(filter[0]),
+				...(Object.hasOwn(queryFilterParsed, 'sort') && { sort: JSON.stringify(sort) }),
+		  }
 
 	return query
 }
