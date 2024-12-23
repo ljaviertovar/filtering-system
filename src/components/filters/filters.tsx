@@ -8,8 +8,11 @@ import { Filter } from '@/types.td'
 import { DualRangeSlider } from '../ui/dual-range-slider'
 import { useState } from 'react'
 
+const MIN_PRICE = 50
+const MAX_PRICE = 200
+
 export default function Filters() {
-	const [values, setValues] = useState([50, 200])
+	// const [_, setPrices] = useState([50, 200])
 
 	const { filtersFromUrl, updateFilters } = useFilters()
 
@@ -29,9 +32,13 @@ export default function Filters() {
 					<div className='mt-8'>
 						<DualRangeSlider
 							label={value => <span>{value}</span>}
-							value={values}
+							value={
+								filtersFromUrl.price
+									? [parseInt(filtersFromUrl.price[0]), parseInt(filtersFromUrl.price[1])]
+									: [MIN_PRICE, MAX_PRICE]
+							}
 							onValueChange={values => {
-								setValues(values)
+								// setPrices(values)
 								updateFilters('price', values.join(','))
 							}}
 							min={50}

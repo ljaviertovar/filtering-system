@@ -29,3 +29,14 @@ export const filters: Filter[] = [
 		],
 	},
 ]
+
+export const sortOptions = [
+	{
+		value: 'name-asc',
+		label: 'Name ASC',
+	},
+	{
+		value: 'name-desc',
+		label: 'Name DESC',
+	},
+]
