@@ -31,7 +31,7 @@ export default function useFilters() {
 				params.delete(keyLower)
 			}
 		} else {
-			if (keyLower === 'price') {
+			if (keyLower === 'price' || keyLower === 'sort') {
 				params.set(keyLower, valueLower)
 			} else {
 				params.set(keyLower, [...values, valueLower].join(','))

@@ -12,8 +12,6 @@ const MIN_PRICE = 50
 const MAX_PRICE = 200
 
 export default function Filters() {
-	// const [_, setPrices] = useState([50, 200])
-
 	const { filtersFromUrl, updateFilters } = useFilters()
 
 	const defaultValues = filters.map(filter => filter.id)
@@ -38,7 +36,6 @@ export default function Filters() {
 									: [MIN_PRICE, MAX_PRICE]
 							}
 							onValueChange={values => {
-								// setPrices(values)
 								updateFilters('price', values.join(','))
 							}}
 							min={50}

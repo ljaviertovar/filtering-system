@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Command, CommandGroup, CommandItem, CommandList } from '@/components/ui/command'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
@@ -18,6 +18,15 @@ export default function SortFilters() {
 	const [value, setValue] = useState('')
 
 	const { filtersFromUrl, updateFilters } = useFilters()
+
+	useEffect(() => {
+		if (filtersFromUrl.sort) {
+			const optionfromUrl = sortOptions.filter(option => option.value === filtersFromUrl.sort)
+			if (optionfromUrl.length) {
+				setValue(filtersFromUrl.sort as string)
+			}
+		}
+	}, [filtersFromUrl])
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
