@@ -1,6 +1,7 @@
-import useFilters from '@/hooks/use-filters'
 import { Filters } from '.'
 import { Button } from '../ui/button'
+
+import useFilters from '@/hooks/use-filters'
 
 export default function AsideFilters() {
 	const { clearFilters } = useFilters()

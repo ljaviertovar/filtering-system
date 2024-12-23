@@ -29,7 +29,7 @@ export default function SearchResult({ data, isLoading }: Props) {
 const SkeletonCards = memo(() => (
 	<>
 		{Array.from({ length: 12 }).map((_, index) => (
-			<div key={`skeleton${index}}`} className='flex flex-col space-y-3 p-2'>
+			<div key={`skeleton${index}}`} className='flex flex-col items-center space-y-3 p-2'>
 				<Skeleton className='h-60 w-60 rounded-xl' />
 				<div className='space-y-2'>
 					<Skeleton className='h-6 w-[250px]' />

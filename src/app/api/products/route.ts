@@ -13,8 +13,6 @@ export async function POST(request: Request) {
 			query = getQuery(queryFilterParsed)
 		}
 
-		console.log('======================================================================query:', query)
-
 		const data = await fetchData(`${WIX_URL}products/query`, {
 			method: 'POST',
 			headers: {

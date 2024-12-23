@@ -1,14 +1,14 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
 import { Button } from '../ui/button'
-import { Separator } from '../ui/separator'
 import { Filters } from '.'
 import Logo from '../logo'
+
 import { ListFilter } from 'lucide-react'
 
+import useFilters from '@/hooks/use-filters'
+
 export default function SheetFilters() {
-	const updateFilter = () => {
-		return null
-	}
+	const { clearFilters } = useFilters()
 
 	return (
 		<Sheet>
@@ -24,9 +24,14 @@ export default function SheetFilters() {
 						<Logo />
 					</div>
 					<SheetTitle className='text-sm text-muted-foreground font-normal text-left'>Fliter by:</SheetTitle>
+					<div className='flex  justify-end '>
+						<Button variant={'link'} onClick={clearFilters} className='text-xs w-fit px-0 text-black'>
+							Clear filters
+						</Button>
+					</div>
 				</SheetHeader>
-				<Separator />
-				<Filters updateFilter={updateFilter} />
+
+				<Filters />
 			</SheetContent>
 		</Sheet>
 	)
