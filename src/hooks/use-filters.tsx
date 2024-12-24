@@ -56,7 +56,7 @@ export default function useFilters() {
 
 	useEffect(() => {
 		getFiltersFromUrl()
-	}, [searchParams, getFiltersFromUrl])
+	}, [searchParams])
 
 	return { filtersFromUrl, updateFilters, clearFilters }
 }
