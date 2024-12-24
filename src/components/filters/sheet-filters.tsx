@@ -4,6 +4,7 @@ import { Separator } from '../ui/separator'
 import { Filters } from '.'
 import Logo from '../logo'
 import { ListFilter } from 'lucide-react'
+import ExplainOn from '../explain-on'
 
 export default function SheetFilters() {
 	return (
@@ -23,6 +24,7 @@ export default function SheetFilters() {
 				</SheetHeader>
 				<Separator />
 				<Filters />
+				<ExplainOn />
 			</SheetContent>
 		</Sheet>
 	)

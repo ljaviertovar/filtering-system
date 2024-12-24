@@ -4,7 +4,7 @@ import Empty from '@/components/products/empty'
 
 export default function CategoriesPage() {
 	return (
-		<div className='max-w-7xl mx-auto flex flex-col'>
+		<div className='max-w-7xl  mx-auto mb-12 flex flex-col'>
 			<div className='w-full py-2'>
 				<BreadcrumbSearch />
 			</div>

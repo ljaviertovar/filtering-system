@@ -2,7 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 export default function Filters() {
 	return (
-		<Accordion type='multiple' className='w-full' defaultValue={['color', 'size', 'price']}>
+		<Accordion type='multiple' className='w-full mb-12' defaultValue={['color', 'size', 'price']}>
 			<AccordionItem value='color'>
 				<AccordionTrigger className='font-semibold text-md text-primary hover:text-primary/80 hover:no-underline'>
 					Color
