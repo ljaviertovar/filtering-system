@@ -20,12 +20,12 @@ export default function SheetFilters() {
 				</Button>
 			</SheetTrigger>
 			<SheetContent side={'left'} className='w-[280px]'>
-				<SheetHeader className='pb-4'>
+				<SheetHeader className='space-y-0'>
 					<div className='w-full mx-auto flex items-center justify-center h-14'>
 						<Logo />
 					</div>
 					<SheetTitle className='text-sm text-muted-foreground font-normal text-left'>Fliter by:</SheetTitle>
-					<div className='flex  justify-end '>
+					<div className='flex justify-end '>
 						<Button variant={'link'} onClick={clearFilters} className='text-xs w-fit px-0 text-black'>
 							Clear filters
 						</Button>
