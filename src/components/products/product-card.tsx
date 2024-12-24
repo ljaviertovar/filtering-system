@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Button } from '../ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card'
 
@@ -13,10 +14,12 @@ export default function ProductCard({ product }: Props) {
 	return (
 		<Card className='rounded-md border-muted shadow-none'>
 			<CardHeader className='p-2'>
-				<img
-					className='h-60 w-60 mx-auto object-cover rounded-sm'
+				<Image
 					src={product.media.mainMedia.image.url}
 					alt={product.media.mainMedia.title}
+					width={240}
+					height={240}
+					className='rounded-sm object-cover w-60 h-60'
 				/>
 			</CardHeader>
 			<CardContent className='py-0 px-2 flex flex-col justify-between items-center gap-2'>
