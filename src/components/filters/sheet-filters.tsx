@@ -4,6 +4,7 @@ import { Filters } from '.'
 import Logo from '../logo'
 
 import { ListFilter } from 'lucide-react'
+import ExplainOn from '../explain-on'
 
 import useFilters from '@/hooks/use-filters'
 
@@ -32,6 +33,7 @@ export default function SheetFilters() {
 				</SheetHeader>
 
 				<Filters />
+				<ExplainOn />
 			</SheetContent>
 		</Sheet>
 	)

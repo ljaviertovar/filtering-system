@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 import './globals.css'
 import QueryClientProviders from '@/components/providers/query-client-providers'
@@ -27,9 +28,11 @@ export default function RootLayout({
 			<body>
 				<Header />
 
-				<main className='w-full mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>
+				<main className='w-full min-h-[calc(100vh-56px)] mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>
 					<QueryClientProviders>{children}</QueryClientProviders>
 				</main>
+
+				<Footer />
 			</body>
 		</html>
 	)

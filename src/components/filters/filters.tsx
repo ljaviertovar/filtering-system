@@ -1,12 +1,12 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Checkbox } from '../ui/checkbox'
+import { DualRangeSlider } from '../ui/dual-range-slider'
 
 import useFilters from '@/hooks/use-filters'
 
 import { filters } from '@/data'
+
 import { Filter } from '@/types.td'
-import { DualRangeSlider } from '../ui/dual-range-slider'
-import { useState } from 'react'
 
 const MIN_PRICE = 50
 const MAX_PRICE = 200
@@ -17,7 +17,7 @@ export default function Filters() {
 	const defaultValues = filters.map(filter => filter.id)
 
 	return (
-		<Accordion type='multiple' className='w-full' defaultValue={[...defaultValues, 'price']}>
+		<Accordion type='multiple' className='w-full mb-12' defaultValue={[...defaultValues, 'price']}>
 			{filters.map(filter => (
 				<FilterItem key={filter.id} {...filter} filtersFromUrl={filtersFromUrl} updateFilters={updateFilters} />
 			))}
@@ -27,9 +27,9 @@ export default function Filters() {
 					Price
 				</AccordionTrigger>
 				<AccordionContent>
-					<div className='mt-8'>
+					<div className='mt-8 px-2'>
 						<DualRangeSlider
-							label={value => <span>${value}</span>}
+							label={value => <span>{value}</span>}
 							value={
 								filtersFromUrl.price
 									? [parseInt(filtersFromUrl.price[0]), parseInt(filtersFromUrl.price[1])]
