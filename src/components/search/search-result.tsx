@@ -40,3 +40,5 @@ const SkeletonCards = memo(() => (
 		))}
 	</>
 ))
+
+SkeletonCards.displayName = 'SkeletonCards'
