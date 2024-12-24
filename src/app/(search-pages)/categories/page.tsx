@@ -11,7 +11,7 @@ function SearchComponent() {
 	const { data, isLoading } = useSearchProducts()
 
 	return (
-		<div className='max-w-7xl  mx-auto mb-12 flex flex-col'>
+		<div className='max-w-7xl  mx-auto mb-24 flex flex-col'>
 			<div className='w-full py-2'>
 				<BreadcrumbPlp />
 			</div>
