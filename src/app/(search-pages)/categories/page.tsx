@@ -1,26 +1,40 @@
-import { AsideFilters, HeaderFilters } from '@/components/filters'
-import BreadcrumbPLP from '@/components/search/breadcrumb-plp'
+'use client'
 
-import Empty from '@/components/search/empty'
+import { Suspense } from 'react'
 
-export default function CategoriesPage() {
+import { HeaderFilters, AsideFilters } from '@/components/filters'
+import { BreadcrumbPlp, SearchResult } from '@/components/search'
+
+import { useSearchProducts } from '@/hooks/use-search-products'
+
+function SearchComponent() {
+	const { data, isLoading } = useSearchProducts()
+
 	return (
 		<div className='max-w-7xl  mx-auto mb-12 flex flex-col'>
 			<div className='w-full py-2'>
-				<BreadcrumbPLP />
+				<BreadcrumbPlp />
 			</div>
 			<div className='flex gap-2'>
 				<aside className='w-[280px] hidden md:flex flex-col'>
 					<AsideFilters />
 				</aside>
 				<div className='w-full'>
-					<HeaderFilters />
+					<HeaderFilters totalResults={data?.totalResults ?? 0} />
 
 					<section className='w-full p-2 md:p4'>
-						<Empty />
+						<SearchResult data={data} isLoading={isLoading} />
 					</section>
 				</div>
 			</div>
 		</div>
+	)
+}
+
+export default function CategoriesPage() {
+	return (
+		<Suspense>
+			<SearchComponent />
+		</Suspense>
 	)
 }

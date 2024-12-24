@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import BannerPlp from '@/components/banner-plp'
+import { BannerPlp } from '@/components/search'
 
 export const metadata: Metadata = {
 	title: 'Search - Filtering Next App',
