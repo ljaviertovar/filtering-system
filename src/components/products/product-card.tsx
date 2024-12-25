@@ -19,7 +19,7 @@ export default function ProductCard({ product }: Props) {
 					alt={product.media.mainMedia.title}
 					width={240}
 					height={240}
-					className='rounded-sm object-cover w-60 h-60'
+					className='rounded-sm object-cover mx-auto w-60 h-60'
 				/>
 			</CardHeader>
 			<CardContent className='py-0 px-2 flex flex-col justify-between items-center gap-2'>
