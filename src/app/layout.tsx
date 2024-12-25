@@ -28,9 +28,9 @@ export default function RootLayout({
 			<body>
 				<Header />
 
-				<main className='w-full min-h-[calc(100vh-56px)] mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>
+				<div className='w-full min-h-[calc(100vh-56px)] mx-auto px-2 md:px-4 mt-[100px] md:mt-[270px]'>
 					<QueryClientProviders>{children}</QueryClientProviders>
-				</main>
+				</div>
 
 				<Footer />
 			</body>

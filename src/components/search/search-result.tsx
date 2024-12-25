@@ -2,6 +2,7 @@ import { memo } from 'react'
 import { Empty } from '.'
 import { ProductCard } from '../products'
 import { Skeleton } from '../ui/skeleton'
+import { Card } from '../ui/card'
 
 interface Props {
 	data: any
@@ -12,7 +13,7 @@ export default function SearchResult({ data, isLoading }: Props) {
 	if (!isLoading && !data?.products?.length) return <Empty />
 
 	return (
-		<div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+		<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
 			{isLoading ? (
 				<SkeletonCards />
 			) : (
@@ -29,14 +30,12 @@ export default function SearchResult({ data, isLoading }: Props) {
 const SkeletonCards = memo(() => (
 	<>
 		{Array.from({ length: 12 }).map((_, index) => (
-			<div key={`skeleton${index}}`} className='flex flex-col items-center space-y-3 p-2'>
-				<Skeleton className='h-60 w-60 rounded-xl' />
-				<div className='space-y-2'>
-					<Skeleton className='h-6 w-[250px]' />
-					<Skeleton className='h-6 w-[200px]' />
-					<Skeleton className='h-8 w-[250px]' />
-				</div>
-			</div>
+			<Card key={index} className='space-y-2 rounded-md border-none shadow-none'>
+				<Skeleton className='w-full h-60' />
+				<Skeleton className='w-full h-10' />
+				<Skeleton className='w-full h-6' />
+				<Skeleton className='w-full h-6' />
+			</Card>
 		))}
 	</>
 ))
