@@ -1,6 +1,6 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
 import { Button } from '../ui/button'
-import { Filters } from '.'
+import { FilterList } from '.'
 import Logo from '../logo'
 
 import { ListFilter } from 'lucide-react'
@@ -32,7 +32,7 @@ export default function SheetFilters() {
 					</div>
 				</SheetHeader>
 
-				<Filters />
+				<FilterList />
 				<ExplainOn />
 			</SheetContent>
 		</Sheet>

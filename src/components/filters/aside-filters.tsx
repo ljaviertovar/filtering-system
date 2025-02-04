@@ -1,6 +1,6 @@
 import { Button } from '../ui/button'
 import ExplainOn from '../explain-on'
-import { Filters } from '.'
+import { FilterList } from '.'
 
 import useFilters from '@/hooks/use-filters'
 
@@ -18,7 +18,7 @@ export default function AsideFilters() {
 				</div>
 			</div>
 
-			<Filters />
+			<FilterList />
 
 			<ExplainOn />
 		</>

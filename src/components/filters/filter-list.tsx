@@ -11,7 +11,7 @@ import { Filter } from '@/types.td'
 const MIN_PRICE = 50
 const MAX_PRICE = 200
 
-export default function Filters() {
+export default function FilterList() {
 	const { filtersFromUrl, updateFilters } = useFilters()
 
 	const defaultValues = filters.map(filter => filter.id)

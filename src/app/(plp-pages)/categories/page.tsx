@@ -3,7 +3,7 @@
 import { Suspense } from 'react'
 
 import { HeaderFilters, AsideFilters } from '@/components/filters'
-import { BreadcrumbPlp, SearchResult } from '@/components/search'
+import { BreadcrumbPlp, SearchResult } from '@/components/plp'
 
 import { useSearchProducts } from '@/hooks/use-search-products'
 
@@ -31,7 +31,7 @@ function SearchComponent() {
 	)
 }
 
-export default function CategoriesPage() {
+export default function CategoriPage() {
 	return (
 		<Suspense>
 			<SearchComponent />
